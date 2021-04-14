@@ -1,12 +1,19 @@
 <template>
   <div>
-    <div class="topnav">
-      <div class="logo"></div>
-      <div class="menu"></div>
-    </div>
+    <topnav />
     <div class="content">
       <aside>边栏</aside>
       <main>主内容</main>
     </div>
   </div>
-</template> 
+</template>
+<script lang='ts'>
+import { defineComponent } from "vue";
+import Topnav from "../components/Topnav.vue";
+export default defineComponent({
+  name: "Doc",
+  components: {
+    Topnav,
+  },
+});
+</script>

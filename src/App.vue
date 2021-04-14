@@ -1,9 +1,4 @@
 <template>
-  <div>
-    导航栏 | <router-link to="/">first</router-link> |
-    <router-link to="/xxx">second</router-link>
-  </div>
-  <hr />
   <router-view />
 </template>
 
@@ -12,7 +7,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "App",
-  components: {},
 });
 </script>
 

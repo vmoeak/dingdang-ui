@@ -5,6 +5,7 @@
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
+    <span class="toggle-aside"></span>
   </div>
 </template>
 <script lang="ts">
@@ -29,6 +30,8 @@ export default defineComponent({
   padding: 16px;
   position: relative;
   z-index: 10;
+  justify-content: center;
+  align-items: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -39,6 +42,14 @@ export default defineComponent({
     flex-wrap: nowrap;
     > li {
       margin: 0 1em;
+    }
+  }
+  @media (max-width: 500px) {
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
     }
   }
 }

@@ -73,7 +73,8 @@ aside {
   }
   > ol {
     > li {
-      padding: 4px 0;
+      text-align: left;
+      padding: 4px 0 4px 10px;
     }
   }
 }

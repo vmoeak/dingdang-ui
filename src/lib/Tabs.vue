@@ -9,7 +9,7 @@
         :class="{ selected: t === selected }"
         :ref="
           (el) => {
-            if (el) navItems[index] = el;
+            if (t === selected) selectedItems = el;
           }
         "
       >
@@ -38,16 +38,14 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
-    const navItems = ref<HTMLDivElement[]>([]);
+    const selectedItems = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
     const x = () => {
-      const divs = navItems.value;
-      const result = divs.find((div) => div.classList.contains("selected"));
-      const { width } = result?.getBoundingClientRect();
+      const { width } = selectedItems.value.getBoundingClientRect();
       indicator.value.style.width = width + "px";
       const { left: left1 } = container.value.getBoundingClientRect();
-      const { left: left2 } = result?.getBoundingClientRect();
+      const { left: left2 } = selectedItems.value.getBoundingClientRect();
       const left = left2 - left1;
       indicator.value.style.left = left + "px";
     };
@@ -76,7 +74,7 @@ export default defineComponent({
       current,
       select,
       x,
-      navItems,
+      selectedItems,
       container,
       indicator,
     };

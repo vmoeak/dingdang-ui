@@ -1,5 +1,5 @@
 <template>
-  <button class="ui-button" :class="classes">
+  <button class="ui-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -18,6 +18,10 @@ export default defineComponent({
     level: {
       type: String,
       default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props, ctx) {
@@ -42,6 +46,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .ui-button {
   box-sizing: border-box;
   height: $h;
@@ -144,6 +149,22 @@ $red: red;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+  &.ui-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.ui-theme-link,
+  &.ui-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Tabs>
+    <Tabs v-model:selected="y">
       <Tab title="first">内容1</Tab>
       <Tab title="second">内容2</Tab>
     </Tabs>
@@ -8,7 +8,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import Tab from "../lib/Tab.vue";
 import Tabs from "../lib/Tabs.vue";
 export default defineComponent({
@@ -16,6 +16,12 @@ export default defineComponent({
   components: {
     Tab,
     Tabs,
+  },
+  setup() {
+    const y = ref("first");
+    return {
+      y,
+    };
   },
 });
 </script>

@@ -13,12 +13,15 @@
       <div>hi</div>
     </template>
   </Dialog>
+  <h1>示例2</h1>
+  <Button @click="showDialog">show</Button>
 </template>
 
 <script lang='ts'>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, h } from "vue";
 import Dialog from "../lib/Dialog.vue";
 import Button from "../lib/Button.vue";
+import { openDialog } from "../lib/openDialog";
 export default defineComponent({
   name: "DialogDemo",
   components: {
@@ -34,11 +37,25 @@ export default defineComponent({
       return false;
     };
     const f2 = () => {};
+    const showDialog = () => {
+      console.log("showDialog");
+      openDialog({
+        title: h("strong", {}, "标题"),
+        content: "你好",
+        ok() {
+          console.log("ok");
+        },
+        cancel() {
+          console.log("cancel");
+        },
+      });
+    };
     return {
       y,
       toggle,
       f1,
       f2,
+      showDialog,
     };
   },
 });

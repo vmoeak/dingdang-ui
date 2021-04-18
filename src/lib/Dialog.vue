@@ -13,7 +13,7 @@
           </main>
           <footer>
             <Button level="main" @click="ok">OK</Button>
-            <Button @click="close">Cancel</Button>
+            <Button @click="cancel">Cancel</Button>
           </footer>
         </div>
       </div>
@@ -59,10 +59,15 @@ export default defineComponent({
         close();
       }
     };
+    const cancel = () => {
+      props.cancel?.();
+      close();
+    };
     return {
       close,
       onClickOverlay,
       ok,
+      cancel,
     };
   },
 });

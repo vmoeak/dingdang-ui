@@ -28,7 +28,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, computed, ref, onMounted, onUpdated } from "vue";
+import { defineComponent, computed, ref, watchEffect, onMounted } from "vue";
 import Tab from "./Tab.vue";
 export default defineComponent({
   name: "Tabs",
@@ -41,16 +41,21 @@ export default defineComponent({
     const selectedItems = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    const x = () => {
-      const { width } = selectedItems.value.getBoundingClientRect();
-      indicator.value.style.width = width + "px";
-      const { left: left1 } = container.value.getBoundingClientRect();
-      const { left: left2 } = selectedItems.value.getBoundingClientRect();
-      const left = left2 - left1;
-      indicator.value.style.left = left + "px";
-    };
-    onMounted(x);
-    onUpdated(x);
+    onMounted(() => {
+      watchEffect(
+        () => {
+          const { width } = selectedItems.value.getBoundingClientRect();
+          indicator.value.style.width = width + "px";
+          const { left: left1 } = container.value.getBoundingClientRect();
+          const { left: left2 } = selectedItems.value.getBoundingClientRect();
+          const left = left2 - left1;
+          indicator.value.style.left = left + "px";
+        },
+        {
+          flush: "post",
+        }
+      );
+    });
     const defaults = ctx.slots.default?.();
     defaults?.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -73,7 +78,6 @@ export default defineComponent({
       titles,
       current,
       select,
-      x,
       selectedItems,
       container,
       indicator,

@@ -1,5 +1,5 @@
 <template>
-  <button @click="onClick"><span :class="{ transition: x }"></span></button>
+  <button @click="toggle"><span :class="{ checked }"></span></button>
 </template>
 
 <script lang='ts'>
@@ -7,13 +7,13 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "Switch",
   setup() {
-    const x = ref(false);
-    const onClick = () => {
-      x.value = !x.value;
+    const checked = ref(false);
+    const toggle = () => {
+      checked.value = !checked.value;
     };
     return {
-      x,
-      onClick,
+      checked,
+      toggle,
     };
   },
 });
@@ -31,9 +31,6 @@ button {
   position: relative;
 }
 span {
-  // position: absolute;
-  // top: 2px;
-  // left: 2px;
   display: block;
   height: $h2;
   width: $h2;
@@ -43,7 +40,7 @@ span {
   border-radius: $h2 / 2;
   transition: margin-left 1s;
 }
-.transition {
+span.checked {
   margin-left: auto;
 }
 </style>

@@ -1,3 +1,17 @@
 <template>
-  <div>Dialog 的文档</div>
+  <Dialog />
 </template>
+
+<script lang='ts'>
+import { defineComponent } from "vue";
+import Dialog from "../lib/Dialog.vue";
+export default defineComponent({
+  name: "DialogDemo",
+  components: {
+    Dialog,
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+</style>

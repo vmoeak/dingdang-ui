@@ -1,6 +1,11 @@
 <template>
-  <Dialog v-model:visible="y" />
   <Button @click="toggle">toggle</Button>
+  <Dialog
+    v-model:visible="y"
+    :closeOnClickOverlay="false"
+    :ok="f1"
+    :cancel="f2"
+  ></Dialog>
 </template>
 
 <script lang='ts'>
@@ -18,7 +23,16 @@ export default defineComponent({
     const toggle = () => {
       y.value = !y.value;
     };
-    return { y, toggle };
+    const f1 = () => {
+      return false;
+    };
+    const f2 = () => {};
+    return {
+      y,
+      toggle,
+      f1,
+      f2,
+    };
   },
 });
 </script>

@@ -1,18 +1,19 @@
 <template>
-  <button @click="toggle"><span :class="{ checked }"></span></button>
+  <button @click="toggle"><span :class="{ checked: value }"></span></button>
 </template>
 
 <script lang='ts'>
 import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "Switch",
-  setup() {
-    const checked = ref(false);
+  props: {
+    value: Boolean,
+  },
+  setup(props, ctx) {
     const toggle = () => {
-      checked.value = !checked.value;
+      ctx.emit("update:value", !props.value);
     };
     return {
-      checked,
       toggle,
     };
   },
@@ -38,9 +39,12 @@ span {
   margin-left: 2px;
   margin-right: 2px;
   border-radius: $h2 / 2;
-  transition: margin-left 1s;
+  transition: margin-left 250ms;
 }
 span.checked {
   margin-left: auto;
+}
+button:focus {
+  outline: none;
 }
 </style>

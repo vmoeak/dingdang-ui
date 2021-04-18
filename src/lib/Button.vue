@@ -1,17 +1,34 @@
 <template>
-  <button class="ui-button" :class="`ui-theme-${theme}`">
+  <button class="ui-button" :class="classes">
     <slot />
   </button>
 </template>
 <script lang="ts">
-export default {
+import { defineComponent, computed } from "vue";
+export default defineComponent({
   props: {
     theme: {
       type: String,
       default: "button",
     },
+    size: {
+      type: String,
+      default: "normal",
+    },
   },
-};
+  setup(props, ctx) {
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return {
+        [`ui-theme-${theme}`]: theme,
+        [`ui-size-${size}`]: size,
+      };
+    });
+    return {
+      classes,
+    };
+  },
+});
 </script>
 <style lang="scss" scoped>
 $h: 32px;
@@ -46,6 +63,36 @@ $radius: 4px;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+  &.ui-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.ui-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+  }
+  &.ui-theme-button {
+    &.ui-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px;
+    }
+    &.ui-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
+    }
   }
 }
 </style> 

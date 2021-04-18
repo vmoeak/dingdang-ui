@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle"><span :class="{ checked: value }"></span></button>
+  <button @click="toggle" :class="{ checked: value }"><span></span></button>
 </template>
 
 <script lang='ts'>
@@ -27,7 +27,7 @@ button {
   height: $h;
   width: $h * 2;
   border: none;
-  background: blue;
+  background: #bfbfbf;
   border-radius: $h/2;
   position: relative;
 }
@@ -39,12 +39,20 @@ span {
   margin-left: 2px;
   margin-right: 2px;
   border-radius: $h2 / 2;
-  transition: margin-left 250ms;
+  transition: all 250ms;
 }
-span.checked {
+button.checked {
+  background: #1890ff;
+}
+button.checked > span {
   margin-left: auto;
 }
 button:focus {
   outline: none;
+}
+button:active {
+  > span {
+    width: $h2 + 4px;
+  }
 }
 </style>

@@ -38,7 +38,6 @@ export default defineComponent({
     };
     const f2 = () => {};
     const showDialog = () => {
-      console.log("showDialog");
       openDialog({
         title: h("strong", {}, "标题"),
         content: "你好",

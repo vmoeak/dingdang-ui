@@ -2,13 +2,13 @@
 
 打开终端运行下列命令：
 
-```typescript
+```
 npm install ui
 ```
 
 或
 
-```typescript
+```
 yarn add ui
 ```
 

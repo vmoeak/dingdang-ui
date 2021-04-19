@@ -1,20 +1,22 @@
-// vite.config.ts
-import vitePluginVuedoc, { vueDocFiles } from "vite-plugin-vuedoc";
-import { UserConfig } from "vite";
-import Vue from "@vitejs/plugin-vue";
-import Pages from "vite-plugin-pages";
+import { md } from "./src/plugins/md";
+import fs from "fs";
+import { baseParse } from "@vue/compiler-core";
 
-const config: UserConfig = {
-  plugins: [
-    vitePluginVuedoc({ highlight: { theme: "one-dark" } }), // 1. Must be loaded before @vitejs/plugin-vue
-    Vue({
-      include: [/\.vue$/, /\.md$/, ...vueDocFiles], // 2. Must include .md | .vd files
-    }),
-    Pages({
-      pagesDir: "view",
-      extensions: ["vue", "md"],
-    }),
-  ],
+export default {
+  plugins: [md()],
+  vueCustomBlockTransforms: {
+    demo: (options) => {
+      const { code, path } = options;
+      console.log(code, "path");
+      const file = fs.readFileSync(path).toString();
+      const parsed = baseParse(file).children.find((n) => n.tag === "demo");
+      console.log(parsed, "parsed");
+      const title = parsed.children[0].content;
+      const main = file.split(parsed.loc.source).join("").trim();
+      return `export default function (Component) {
+        Component.__sourceCode = ${JSON.stringify(main)}
+        Component.__sourceCodeTitle = ${JSON.stringify(title)}
+      }`.trim();
+    },
+  },
 };
-
-export default config;

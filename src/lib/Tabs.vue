@@ -56,18 +56,18 @@ export default defineComponent({
         }
       );
     });
-    const defaults = ctx.slots.default?.();
-    defaults?.forEach((tag) => {
+    const defaults = ctx.slots.default();
+    defaults.forEach((tag) => {
       if (tag.type !== Tab) {
         throw new Error("Tabs字标签必须为Tab");
       }
     });
-    const titles = defaults?.map((tag) => {
-      return tag.props?.title;
+    const titles = defaults.map((tag) => {
+      return tag.props.title;
     });
     const current = computed(() => {
-      return defaults?.find((item) => {
-        return item.props?.title === props.selected;
+      return defaults.find((item) => {
+        return item.props.title === props.selected;
       });
     });
     const select = (title: string) => {

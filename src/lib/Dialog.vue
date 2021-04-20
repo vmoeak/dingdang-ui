@@ -55,12 +55,12 @@ export default defineComponent({
       }
     };
     const ok = () => {
-      if (props.ok?.()) {
+      if (props.ok()) {
         close();
       }
     };
     const cancel = () => {
-      props.cancel?.();
+      props.cancel();
       close();
     };
     return {

@@ -29,7 +29,7 @@ export default {
   setup(props) {
     const html = computed(() => {
       return Prism.highlight(
-        props.component?.__sourceCode,
+        props.component.__sourceCode,
         Prism.languages.html,
         "html"
       );

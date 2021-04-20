@@ -38,6 +38,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped >
+$aside-index: 10;
 .router-link-active {
   text-decoration: underline;
 }
@@ -45,6 +46,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   height: 100vh;
+  z-index: $aside-index;
   > .content {
     padding-top: 60px;
     padding-left: 156px;

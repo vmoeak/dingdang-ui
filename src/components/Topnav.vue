@@ -13,7 +13,7 @@
       class="toggle-aside"
       @click="toggleMenu"
     >
-      <use xlink:href="#icon-menu"></use>
+      <use xlink:href="#icon-meau"></use>
     </svg>
   </div>
 </template>
@@ -49,7 +49,7 @@ $color: #007974;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 20;
   justify-content: center;
   align-items: center;
   > .logo {

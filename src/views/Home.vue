@@ -4,7 +4,7 @@
     <div class="banner">
       <h1>Vue UI 框架</h1>
       <p class="actions">
-        <a href="https://github.com">GitHub</a>
+        <a href="https://github.com/vmoeak/dingdang-ui">GitHub</a>
         <router-link to="/doc">开始</router-link>
       </p>
     </div>

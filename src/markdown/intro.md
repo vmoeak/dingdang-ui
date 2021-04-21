@@ -1,5 +1,5 @@
 # 介绍
 
-UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库。
+本项目是为了学习 vue3.0 而写的一个组件库，使用 vue3、typescript、vite 搭建。 可以让你快速了解 vue3 的新特性，项目仅供学习。（请勿在生产环境中使用）。
 
 下一节：[安装](#/doc/install)

@@ -54,6 +54,9 @@ $border-color: #d9d9d9;
 .demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
   > h2 {
     font-size: 20px;
     padding: 8px 16px;

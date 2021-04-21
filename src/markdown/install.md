@@ -2,13 +2,13 @@
 
 打开终端运行下列命令：
 
-```
+```bash
 npm install ui
 ```
 
 或
 
-```
+```bash
 yarn add ui
 ```
 

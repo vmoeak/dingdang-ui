@@ -8,11 +8,11 @@ ol {
   list-style: none;
 }
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: inherit;
   &:hover {
-    border-bottom: 1px solid;
     cursor: pointer;
+    // background: #e5f2fa;
   }
 }
 

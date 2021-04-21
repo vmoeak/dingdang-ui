@@ -86,7 +86,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
@@ -114,11 +114,11 @@ $border-color: #d9d9d9;
       left: 0;
       bottom: -1px;
       width: 100px;
-      z-index: 9999;
     }
   }
   &-content {
     padding: 8px 0;
+    text-align: left;
   }
 }
 </style>

@@ -42,9 +42,10 @@ export default defineComponent({
 $color: #007974;
 .topnav {
   color: $color;
-  background: pink;
+  background: #fff;
   display: flex;
   padding: 16px;
+  padding-right: 32px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -52,6 +53,7 @@ $color: #007974;
   z-index: 20;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 5px 5px rgb(51 51 51 / 10%);
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -70,13 +72,12 @@ $color: #007974;
   }
   > .toggle-aside {
     display: none;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    background: fade-out(black, 0.9);
   }
   @media (max-width: 500px) {
     > .menu {

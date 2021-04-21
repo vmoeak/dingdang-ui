@@ -1,10 +1,12 @@
 <template>
   <h1>Button示例</h1>
-  <Demo :component="ButtonDemo1" />
-  <Demo :component="ButtonDemo2" />
-  <Demo :component="ButtonDemo3" />
-  <Demo :component="ButtonDemo4" />
-  <Demo :component="ButtonDemo5" />
+  <div class="demo-component">
+    <Demo :component="ButtonDemo1" />
+    <Demo :component="ButtonDemo2" />
+    <Demo :component="ButtonDemo3" />
+    <Demo :component="ButtonDemo4" />
+    <Demo :component="ButtonDemo5" />
+  </div>
 </template>
 <script lang="ts">
 import Demo from "./Demo.vue";

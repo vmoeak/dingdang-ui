@@ -29,7 +29,7 @@ export default defineComponent({
       default: false,
     },
   },
-  setup(props, ctx) {
+  setup(props) {
     const { theme, size, level } = props;
     const classes = computed(() => {
       return {
@@ -44,7 +44,7 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;

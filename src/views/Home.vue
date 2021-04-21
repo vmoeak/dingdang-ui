@@ -1,9 +1,8 @@
 <template>
   <div class="home">
-    <topnav />
+    <topnav class="nav" />
     <div class="banner">
-      <h1>UI</h1>
-      <h2>一个vue3 UI 框架</h2>
+      <h1>Vue UI 框架</h1>
       <p class="actions">
         <a href="https://github.com">GitHub</a>
         <router-link to="/doc">开始</router-link>
@@ -16,7 +15,7 @@
             <use xlink:href="#icon-Vue"></use>
           </svg>
           <h3>基于 Vue 3</h3>
-          <p>骄傲地使用了 Vue 3 Composition API</p>
+          <p>使用 Vue 3 Composition API</p>
         </li>
         <li>
           <svg>
@@ -30,7 +29,7 @@
             <use xlink:href="#icon-light"></use>
           </svg>
           <h3>代码易读</h3>
-          <p>每个组件的源代码都极其简洁</p>
+          <p>每个组件的源代码简洁易懂</p>
         </li>
       </ul>
     </div>
@@ -50,13 +49,8 @@ export default defineComponent({
 $green: #02bcb0;
 $border-radius: 4px;
 $color: #007974;
-.home {
-  background: linear-gradient(
-    145deg,
-    rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 1) 100%
-  );
-  clip-path: ellipse(80% 60% at 50% 40%);
+.nav {
+  background: #b7d8df;
 }
 .features {
   margin: 64px auto;
@@ -106,11 +100,12 @@ $color: #007974;
   }
 }
 .banner {
-  padding: 100px 0;
+  padding: 180px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: #b7d8df;
   > .actions {
     padding: 8px 0;
     a {

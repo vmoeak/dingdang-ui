@@ -5,7 +5,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 export default defineComponent({
   name: "Switch",
   props: {
@@ -22,7 +22,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
 .ui-switch {

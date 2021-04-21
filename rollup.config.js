@@ -11,14 +11,14 @@ export default {
       globals: {
         vue: "Vue",
       },
-      name: "UI",
-      file: "dist/lib/ui.js",
+      name: "dingdang",
+      file: "dist/lib/dingdang.js",
       format: "umd",
       plugins: [terser()],
     },
     {
       name: "UI",
-      file: "dist/lib/ui.esm.js",
+      file: "dist/lib/dingdang.esm.js",
       format: "es",
       plugins: [terser()],
     },

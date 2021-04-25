@@ -9,7 +9,7 @@ npm install dingdang-ui
 或
 
 ```bash
-yarn add ui
+yarn add dingdang-ui
 ```
 
 下一节：[开始使用](#/doc/get-started)

@@ -5,7 +5,9 @@
 然后在你的代码中写入下面的代码
 
 ```javascript
-import { Button, Tabs, Switch, Dialog } from "ui";
+import { Button, Tabs, Switch, Dialog } from "dingdang-ui";
+// 记得全局导入css
+import "dingdang-ui/dist/lib/dingdang.css";
 ```
 
 就可以使用我提供的组件了。
@@ -21,7 +23,8 @@ import { Button, Tabs, Switch, Dialog } from "ui";
   </div>
 </template>
 <script>
-import { Button, Tabs, Switch, Dialog } from "ui";
+import { Button } from "dingdang-ui";
+import "dingdang-ui/dist/lib/dingdang.css";
 export default {
   components: { Button },
 };

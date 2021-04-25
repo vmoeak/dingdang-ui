@@ -3,7 +3,7 @@
 打开终端运行下列命令：
 
 ```bash
-npm install ui
+npm install dingdang-ui
 ```
 
 或
